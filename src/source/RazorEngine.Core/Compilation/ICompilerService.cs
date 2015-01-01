@@ -37,6 +37,8 @@
         /// <returns>The string type name (including namespace).</returns>
         string BuildTypeName(Type templateType);
 
+        string GenerateCode(TypeContext context);
+
         /// <summary>
         /// Compiles the type defined in the specified type context.
         /// </summary>

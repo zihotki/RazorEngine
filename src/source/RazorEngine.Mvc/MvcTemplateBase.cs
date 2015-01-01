@@ -2,7 +2,7 @@
 {
     using System;
     using System.Web;
-    using System.Web.Mvc;
+    /*using System.Web.Mvc;
 
     using Templating;
 
@@ -32,5 +32,5 @@
                 throw new InvalidOperationException("Unable to run template outside of ASP.NET MVC");
         }
         #endregion
-    }
+    }*/
 }

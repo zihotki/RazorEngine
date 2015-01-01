@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorEngine.Core", "source\RazorEngine.Core\RazorEngine.Core.csproj", "{D268F86D-2DAB-4329-A75F-3BCF6D5BCDC4}"
 EndProject
@@ -89,6 +89,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuget", "nuget", "{77852C68
 		..\nuget\RazorEngine.nuspec = ..\nuget\RazorEngine.nuspec
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorEngine.Generator", "source\RazorEngine.Generator\RazorEngine.Generator.csproj", "{E02D1CAB-F514-4C6C-95AF-A59FC93FC022}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{11CCC43C-DAF8-48F7-8E45-FCE84762C262}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -139,6 +146,16 @@ Global
 		{BC7891A1-8459-4A69-A37C-F40824E28C70}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{BC7891A1-8459-4A69-A37C-F40824E28C70}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{BC7891A1-8459-4A69-A37C-F40824E28C70}.Release|x86.ActiveCfg = Release|Any CPU
+		{E02D1CAB-F514-4C6C-95AF-A59FC93FC022}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E02D1CAB-F514-4C6C-95AF-A59FC93FC022}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E02D1CAB-F514-4C6C-95AF-A59FC93FC022}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{E02D1CAB-F514-4C6C-95AF-A59FC93FC022}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{E02D1CAB-F514-4C6C-95AF-A59FC93FC022}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E02D1CAB-F514-4C6C-95AF-A59FC93FC022}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E02D1CAB-F514-4C6C-95AF-A59FC93FC022}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E02D1CAB-F514-4C6C-95AF-A59FC93FC022}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{E02D1CAB-F514-4C6C-95AF-A59FC93FC022}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{E02D1CAB-F514-4C6C-95AF-A59FC93FC022}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -154,6 +171,7 @@ Global
 		{3AC5DA61-ED58-45FA-975B-4FDB23387B7A} = {A9A2DC20-74A8-4F03-8EDB-A0B6B95F7401}
 		{CF6DB8E1-2459-4EFC-84D0-BCBB4834DAB8} = {3AC5DA61-ED58-45FA-975B-4FDB23387B7A}
 		{77852C68-A0DB-4644-A1B4-17E101DFE9B1} = {57FF23EF-C0CC-42F2-9CF7-5A468FC50C89}
+		{E02D1CAB-F514-4C6C-95AF-A59FC93FC022} = {AB84CBF8-2E91-46B4-8803-8CF529CDA7E7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35

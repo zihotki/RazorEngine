@@ -570,6 +570,31 @@ namespace RazorEngine.Templating
         }
 
 
+        public string GenerateCode(string razorTemplate, string className, string classNamespace)
+        {
+            var context = new TypeContext(className, classNamespace)
+            {
+                ModelType = typeof (object),
+                TemplateContent = razorTemplate,
+                TemplateType = typeof (TemplateBase<>),
+                
+            };
+
+            foreach (var ns in _config.Namespaces)
+                context.Namespaces.Add(ns);
+
+            var service = _config
+                .CompilerServiceFactory
+                .CreateCompilerService(_config.Language);
+
+            service.Debug = _config.Debug;
+            service.CodeInspectors = _config.CodeInspectors ?? Enumerable.Empty<ICodeInspector>();
+            service.ReferenceResolver = _config.ReferenceResolver ?? new Compilation.Resolver.UseCurrentAssembliesReferenceResolver();
+
+
+            return service.GenerateCode(context);
+        }
+
         /// <summary>
         /// Resolves the template with the specified name.
         /// </summary>

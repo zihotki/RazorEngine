@@ -91,6 +91,8 @@
         /// <returns>The compiled type.</returns>
         public abstract Tuple<Type, Assembly> CompileType(TypeContext context);
 
+        public abstract string GenerateCode(TypeContext context);
+
         /// <summary>
         /// Creates a <see cref="RazorEngineHost"/> used for class generation.
         /// </summary>
@@ -98,7 +100,7 @@
         /// <param name="modelType">The model type.</param>
         /// <param name="className">The class name.</param>
         /// <returns>An instance of <see cref="RazorEngineHost"/>.</returns>
-        private RazorEngineHost CreateHost(Type templateType, Type modelType, string className)
+        private RazorEngineHost CreateHost(Type templateType, Type modelType, string className, string classNamespace)
         {
             var host = new RazorEngineHost(CodeLanguage, MarkupParserFactory)
                            {
@@ -106,7 +108,7 @@
                                DefaultModelType = modelType,
                                DefaultBaseClass = BuildTypeName(templateType),
                                DefaultClassName = className,
-                               DefaultNamespace = "CompiledRazorTemplates.Dynamic",
+                               DefaultNamespace = classNamespace,
                                GeneratedClassContext = new GeneratedClassContext("Execute", "Write", "WriteLiteral",
                                                                                  "WriteTo", "WriteLiteralTo",
                                                                                  "RazorEngine.Templating.TemplateWriter",
@@ -158,7 +160,8 @@
         /// <param name="modelType">The model type.</param>
         /// <returns>A <see cref="CodeCompileUnit"/> used to compile a type.</returns>
         [Pure]
-        public CodeCompileUnit GetCodeCompileUnit(string className, string template, ISet<string> namespaceImports, Type templateType, Type modelType)
+        public CodeCompileUnit GetCodeCompileUnit(string className, string classNamespace, string template, ISet<string> namespaceImports, 
+            Type templateType, Type modelType)
         {
             if (string.IsNullOrEmpty(className))
                 throw new ArgumentException("Class name is required.");
@@ -170,7 +173,7 @@
             templateType = templateType ?? ((modelType == null) ? typeof(TemplateBase) : typeof(TemplateBase<>));
 
             // Create the RazorEngineHost
-            var host = CreateHost(templateType, modelType, className);
+            var host = CreateHost(templateType, modelType, className, classNamespace);
 
             // Add any required namespace imports
             foreach (string ns in GetNamespaces(templateType, namespaceImports))

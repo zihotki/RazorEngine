@@ -51,8 +51,8 @@
             if (_disposed)
                 throw new ObjectDisposedException(GetType().Name);
 
-            var compileUnit = GetCodeCompileUnit(context.ClassName, context.TemplateContent, context.Namespaces,
-                                                 context.TemplateType, context.ModelType);
+            var compileUnit = GetCodeCompileUnit(context.ClassName, context.ClassNamespace,
+                context.TemplateContent, context.Namespaces, context.TemplateType, context.ModelType);
 
             var @params = new CompilerParameters
             {
@@ -83,6 +83,26 @@
             }
 
             return Tuple.Create(_codeDomProvider.CompileAssemblyFromDom(@params, compileUnit), sourceCode);
+        }
+
+        [Pure]
+        public override string GenerateCode(TypeContext context)
+        {
+            if (_disposed)
+                throw new ObjectDisposedException(GetType().Name);
+
+            if (context == null)
+                throw new ArgumentNullException("context");
+
+            var compileUnit = GetCodeCompileUnit(context.ClassName, context.ClassNamespace, context.TemplateContent, 
+                context.Namespaces, context.TemplateType, context.ModelType);
+
+            var builder = new StringBuilder();
+            using (var writer = new StringWriter(builder, CultureInfo.InvariantCulture))
+            {
+                _codeDomProvider.GenerateCodeFromCompileUnit(compileUnit, writer, new CodeGeneratorOptions());
+                return builder.ToString();
+            }
         }
 
         /// <summary>

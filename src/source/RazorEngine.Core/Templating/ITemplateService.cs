@@ -205,6 +205,8 @@
         /// <returns>The string result of the template.</returns>
         string Run(ITemplate template, DynamicViewBag viewBag);
 
+        string GenerateCode(string razorTemplate, string className, string classNamespace);
+
         #endregion
     }
 }

@@ -488,6 +488,11 @@
             return _proxy.Run(template, viewBag);
         }
 
+        public string GenerateCode(string razorTemplate, string className, string classNamespace)
+        {
+            return _proxy.GenerateCode(razorTemplate, className, classNamespace);
+        }
+
         #endregion
     }
 }

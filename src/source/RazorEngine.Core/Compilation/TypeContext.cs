@@ -13,8 +13,17 @@
         /// Initialises a new instance of <see cref="TypeContext"/>.
         /// </summary>
         internal TypeContext()
+            : this(CompilerServicesUtility.GenerateClassName(), "CompiledRazorTemplates.Dynamic")
         {
-            ClassName = CompilerServicesUtility.GenerateClassName();
+        }
+
+        /// <summary>
+        /// Initialises a new instance of <see cref="TypeContext"/>.
+        /// </summary>
+        internal TypeContext(string className, string classNamespace)
+        {
+            ClassName = className;
+            ClassNamespace = classNamespace;
             Namespaces = new HashSet<string>();
         }
         #endregion
@@ -24,6 +33,8 @@
         /// Gets the class name.
         /// </summary>
         public string ClassName { get; private set; }
+
+        public string ClassNamespace { get; private set; }
 
         /// <summary>
         /// Gets or sets the model type.
