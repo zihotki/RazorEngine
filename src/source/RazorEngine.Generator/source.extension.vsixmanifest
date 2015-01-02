@@ -4,11 +4,13 @@
     <Identity Id="RazorEngine.Generator..2ffb8c5b-953e-4e7a-b676-625494b7b8b2" Version="1.1" Language="en-US" Publisher="Vasili Puchko" />
     <DisplayName>RazorEngine.Generator</DisplayName>
     <Description xml:space="preserve">Generator tool to generate C# code for Razor views using RazorEngine library</Description>
-    <License>MS-PL</License>
+    <License>LICENSE.txt</License>
     <Tags>RazorEngine Generator</Tags>
   </Metadata>
   <Installation>
-    <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[11.0,12.0)" />
+    <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[11.0,13.0)" />
+    <InstallationTarget Version="[11.0,13.0)" Id="Microsoft.VisualStudio.Premium" />
+    <InstallationTarget Version="[11.0,13.0)" Id="Microsoft.VisualStudio.Ultimate" />
   </Installation>
   <Dependencies>
     <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
