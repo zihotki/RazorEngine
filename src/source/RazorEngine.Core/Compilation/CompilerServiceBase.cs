@@ -1,4 +1,6 @@
-﻿namespace RazorEngine.Compilation
+﻿using System.Text;
+
+namespace RazorEngine.Compilation
 {
     using System;
     using System.CodeDom;
@@ -91,7 +93,7 @@
         /// <returns>The compiled type.</returns>
         public abstract Tuple<Type, Assembly> CompileType(TypeContext context);
 
-        public abstract string GenerateCode(TypeContext context);
+        public abstract StringBuilder GenerateCode(TypeContext context);
 
         /// <summary>
         /// Creates a <see cref="RazorEngineHost"/> used for class generation.

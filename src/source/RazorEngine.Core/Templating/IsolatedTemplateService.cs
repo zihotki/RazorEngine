@@ -1,4 +1,6 @@
-﻿namespace RazorEngine.Templating
+﻿using System.Text;
+
+namespace RazorEngine.Templating
 {
     using System;
     using System.Collections.Generic;
@@ -488,7 +490,7 @@
             return _proxy.Run(template, viewBag);
         }
 
-        public string GenerateCode(string razorTemplate, string className, string classNamespace)
+        public StringBuilder GenerateCode(string razorTemplate, string className, string classNamespace)
         {
             return _proxy.GenerateCode(razorTemplate, className, classNamespace);
         }

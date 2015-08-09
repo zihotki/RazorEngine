@@ -1,4 +1,6 @@
-﻿namespace RazorEngine.Compilation
+﻿using System.Text;
+
+namespace RazorEngine.Compilation
 {
     using System;
     using System.Collections.Generic;
@@ -37,7 +39,7 @@
         /// <returns>The string type name (including namespace).</returns>
         string BuildTypeName(Type templateType);
 
-        string GenerateCode(TypeContext context);
+        StringBuilder GenerateCode(TypeContext context);
 
         /// <summary>
         /// Compiles the type defined in the specified type context.

@@ -1,4 +1,5 @@
 ﻿using System.Runtime.Remoting.Contexts;
+using System.Text;
 
 namespace RazorEngine.Templating
 {
@@ -570,7 +571,7 @@ namespace RazorEngine.Templating
         }
 
 
-        public string GenerateCode(string razorTemplate, string className, string classNamespace)
+        public StringBuilder GenerateCode(string razorTemplate, string className, string classNamespace)
         {
             var context = new TypeContext(className, classNamespace)
             {

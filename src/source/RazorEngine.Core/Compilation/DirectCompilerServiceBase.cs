@@ -86,7 +86,7 @@
         }
 
         [Pure]
-        public override string GenerateCode(TypeContext context)
+        public override StringBuilder GenerateCode(TypeContext context)
         {
             if (_disposed)
                 throw new ObjectDisposedException(GetType().Name);
@@ -101,7 +101,7 @@
             using (var writer = new StringWriter(builder, CultureInfo.InvariantCulture))
             {
                 _codeDomProvider.GenerateCodeFromCompileUnit(compileUnit, writer, new CodeGeneratorOptions());
-                return builder.ToString();
+                return builder;
             }
         }
 

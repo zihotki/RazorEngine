@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="RazorEngine.Generator..2ffb8c5b-953e-4e7a-b676-625494b7b8b2" Version="1.1" Language="en-US" Publisher="Vasili Puchko" />
+    <Identity Id="RazorEngine.Generator..2ffb8c5b-953e-4e7a-b676-625494b7b8b2" Version="1.2" Language="en-US" Publisher="Vasili Puchko" />
     <DisplayName>RazorEngine.Generator</DisplayName>
     <Description xml:space="preserve">Generator tool to generate C# code for Razor views using RazorEngine library</Description>
     <License>LICENSE.txt</License>
